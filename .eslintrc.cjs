@@ -7,6 +7,7 @@ module.exports = {
 		'plugin:react-hooks/recommended',
 		'prettier',
 		'plugin:prettier/recommended',
+		'plugin:react/recommended',
 		// 'airbnb',
 		// 'airbnb-typescript',
 	],
@@ -19,5 +20,9 @@ module.exports = {
 			{ allowConstantExport: true },
 		],
 		"no-console": "error",
+		"no-empty-pattern":"error",
+		"no-import-assign":"error",
+		"no-invalid-regexp":"error",
+		"react/react-in-jsx-scope": "off",
 	},
 };
