@@ -31,8 +31,8 @@ const Home = (): React.ReactNode => {
 					<Paragraph>🎴 UI Library : Ant Designs</Paragraph>
 
 					<p>
-						Additional added support of husky and pre-configured vscode
-						workspace settings
+						Additionally added support of husky and pre-configured vscode
+						snippets workspace settings
 					</p>
 				</Typography>
 				{/* <Flex gap={10}>
