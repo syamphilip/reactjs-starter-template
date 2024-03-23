@@ -32,7 +32,7 @@ const Home = (): React.ReactNode => {
 
 					<p>
 						Additional added support of husky and pre-configured vscode
-						workspace setting
+						workspace settings
 					</p>
 				</Typography>
 				{/* <Flex gap={10}>
