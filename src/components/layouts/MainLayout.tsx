@@ -1,13 +1,17 @@
-import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Layout } from 'antd';
 import PageHeader from '../common/Header';
+import { Helmet } from 'react-helmet-async';
 
 const { Content } = Layout;
 
 const MainLayout = () => {
 	return (
-		<Suspense>
+		<>
+			<Helmet>
+				<title>Vite ReactJS</title>
+				<meta name="description" content="React JS + Vite Starter template" />
+			</Helmet>
 			<Layout className="bg-white">
 				<PageHeader />
 				<Content>
@@ -16,7 +20,7 @@ const MainLayout = () => {
 					</div>
 				</Content>
 			</Layout>
-		</Suspense>
+		</>
 	);
 };
 
