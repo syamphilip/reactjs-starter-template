@@ -1,8 +1,10 @@
-import { Navigate, useRoutes } from 'react-router-dom';
+import React from 'react';
+import { useRoutes } from 'react-router-dom';
 import RootError from '@/components/Error';
 import MainLayout from '@/components/layouts/MainLayout';
-import { AboutPage } from '@/features/About';
 import { HomePage } from '@/features/Home';
+
+const About = React.lazy(() => import('@/features/About/routes/About'));
 
 const AppRouter = () => {
 	const router = useRoutes([
@@ -13,16 +15,11 @@ const AppRouter = () => {
 			children: [
 				{
 					index: true,
-					element: <Navigate to="/home" />,
-					errorElement: <RootError />,
-				},
-				{
-					path: '/home',
 					element: <HomePage />,
 				},
 				{
 					path: '/about',
-					element: <AboutPage />,
+					element: <About />,
 				},
 			],
 		},
