@@ -1,7 +1,8 @@
 import { Typography } from 'antd';
 
-const Home = (): React.ReactNode => {
-	const { Title, Paragraph } = Typography;
+const { Title, Paragraph } = Typography;
+
+const About = () => {
 	return (
 		<Typography>
 			<Paragraph className="text-slate-400">version 1.0</Paragraph>
@@ -35,4 +36,4 @@ const Home = (): React.ReactNode => {
 	);
 };
 
-export default Home;
+export default About;

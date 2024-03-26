@@ -1,38 +1,34 @@
-import { createElement } from 'react';
-import {
-	createBrowserRouter,
-	Navigate,
-	RouterProvider,
-} from 'react-router-dom';
-import Home from './home';
-import About from './about';
-import RootError from '../components/error';
-import MainLayout from '../components/layouts/main-layout';
+import { Navigate, useRoutes } from 'react-router-dom';
+import RootError from '@/components/Error';
+import MainLayout from '@/components/layouts/MainLayout';
+import { AboutPage } from '@/features/About';
+import { HomePage } from '@/features/Home';
 
-const router = createBrowserRouter([
-	{
-		path: '',
-		element: <MainLayout />,
-		errorElement: <RootError />,
-		children: [
-			{
-				index: true,
-				element: <Navigate to="/home" />,
-			},
-			{
-				path: '/home',
-				element: <Home />,
-			},
-			{
-				path: '/about',
-				element: <About />,
-			},
-		],
-	},
-]);
+const AppRouter = () => {
+	const router = useRoutes([
+		{
+			path: '',
+			element: <MainLayout />,
+			errorElement: <RootError />,
+			children: [
+				{
+					index: true,
+					element: <Navigate to="/home" />,
+					errorElement: <RootError />,
+				},
+				{
+					path: '/home',
+					element: <HomePage />,
+				},
+				{
+					path: '/about',
+					element: <AboutPage />,
+				},
+			],
+		},
+	]);
 
-const Router = (): JSX.Element => {
-	return createElement(RouterProvider, { router });
+	return router;
 };
 
-export default Router;
+export default AppRouter;
